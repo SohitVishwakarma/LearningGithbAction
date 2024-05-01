@@ -1,0 +1,25 @@
+name: hello-world
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  job-template:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Code
+        run: echo "Checking code for errors"
+      - name: Perform Action
+        run: echo "Performing some action"
+      - name: Verify Code
+        run: echo "Verifying code for accuracy"
+
+# Dynamically create 50 jobs
+$for((i=1;i<=50;i++)); do
+  $job_name="job$i"
+  $job_id="job$i"
+  ${{ job_name }}:
+    name: $job_name
+    needs: job-template
