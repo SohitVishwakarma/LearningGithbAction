@@ -1,0 +1,32 @@
+name: unique-workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Start Message
+        run: echo "Starting the unique workflow..."
+
+      - name: Perform Lengthy Task
+        run: |
+          echo "Performing a lengthy task..."
+          sleep 600 # Sleep for 10 minutes (600 seconds)
+          echo "Lengthy task completed!"
+
+      - name: Generate Output
+        run: |
+          echo "Generating some output..."
+          echo "Output line 1"
+          echo "Output line 2"
+          echo "Output line 3"
+          echo "Output line 4"
+          echo "Output line 5"
+          echo "Output generation complete."
+
+      - name: Print End Message
+        run: echo "The unique workflow has finished."
