@@ -5,6 +5,7 @@ import sys
 
 
 def main():
+     
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'my_tennis_club.settings')
     try:
